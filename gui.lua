@@ -2,13 +2,11 @@
 gui.lua
 ============================================================================]] --
 
-local vb = renoise.ViewBuilder()
-
 --------------------------------------------------------------------------------
 -- UI Elements
 --------------------------------------------------------------------------------
 
-local function create_sample_selector()
+local function create_sample_selector(vb)
     local song = renoise.song()
     local instrument = song.selected_instrument
 
@@ -53,7 +51,7 @@ local function create_sample_selector()
     }
 end
 
-local function create_buttons()
+local function create_buttons(vb)
     return vb:row {
         vb:button {
             text = "Save Volume State",
@@ -101,11 +99,14 @@ end
 --------------------------------------------------------------------------------
 
 function show_sample_mute_dialog()
+    -- Create a new ViewBuilder instance for each dialog
+    local vb = renoise.ViewBuilder()
+
     local dialog_content = vb:column {
         margin = 10,
         spacing = 10,
-        create_sample_selector(),
-        create_buttons()
+        create_sample_selector(vb),
+        create_buttons(vb)
     }
 
     renoise.app():show_custom_dialog(
