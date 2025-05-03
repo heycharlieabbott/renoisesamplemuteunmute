@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RenoiseScriptingTool doc_version="0">
+  <ApiVersion>6</ApiVersion>
+  <AutoUpgraded>true</AutoUpgraded>
+  <Id>com.renoise.SampleMuteUnmute</Id>
+  <Version>1.0</Version>
+  <Author>Charlie Abbott</Author>
+  <Name>Sample Mute/Unmute</Name>
+  <Category>Instrument</Category>
+  <Description>Mute and unmute samples while preserving their volume state</Description>
+</RenoiseScriptingTool> 
